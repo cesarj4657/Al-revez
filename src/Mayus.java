@@ -15,7 +15,7 @@ public class Mayus {
 		return text.toUpperCase();
 	}
 
-	public void run() throws IOException{
+	public void correr() throws IOException{
 	
 	
 			BufferedReader entrada=new BufferedReader(new FileReader(texto1));
@@ -24,8 +24,10 @@ public class Mayus {
 			String line =entrada.readLine();
 			
 			while(line!=null) {
-				
-
+				String text=this.convertMayus(line);
+				salida.write(text,0,text.length());
+				salida.newLine();
+				line=entrada.readLine();
 			}
 			
 			entrada.close();
@@ -35,6 +37,6 @@ public class Mayus {
 	}
 	public static void main(String [] args) throws IOException {
 		Mayus x = new Mayus();
-		x.run();
+		x.correr();
 	}
 }
